@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {FC} from 'react'
+import { RouteComponentProps } from 'react-router'
 
-const Sidebar = () => {
+const Sidebar: FC<RouteComponentProps> = () => {
     return (
         <div>
             Sidebar
