@@ -2,7 +2,7 @@ import React from 'react'
 
 import './layout.css'
 
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../sidebar/Sidebar';
 import Routes from '../Routes';
 
 import { BrowserRouter, Route } from 'react-router-dom';
