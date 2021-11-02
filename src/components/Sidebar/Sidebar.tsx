@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Link } from 'react-router-dom'
 
@@ -8,13 +8,13 @@ import logo from '../../assets/images/logo.png'
 
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
 
-interface sbItemProp {
+interface SidebarItemProp {
     active: boolean;
     icon: string;
     title: string;
 }
 
-const SidebarItem = (props: sbItemProp) => {
+const SidebarItem = (props: SidebarItemProp) => {
     const active = props.active ? 'active' : ''
 
     return (
@@ -29,7 +29,7 @@ const SidebarItem = (props: sbItemProp) => {
     )
 }
 
-const Sidebar: FC<RouteComponentProps> = (props) => {
+const Sidebar = (props: RouteComponentProps) => {
 
     const activeItem = sidebar_items.findIndex(item => item.route === props.location.pathname)
 
