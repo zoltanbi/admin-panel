@@ -13,3 +13,9 @@ export interface UserMenu {
     icon: string;
     content: string;
 }
+
+export interface StatusCard {
+    icon: string;
+    count: string;
+    title: string;
+}

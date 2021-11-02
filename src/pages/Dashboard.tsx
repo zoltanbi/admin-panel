@@ -14,8 +14,6 @@ const Dashboard = () => {
                         {
                             statusCards.map((item, index) => (
                                 <div className="col-6">
-                                    {/* Status card here */}
-                                    {item.title}
                                     <StatusCard
                                         icon={item.icon}
                                         count={item.count}
@@ -24,6 +22,11 @@ const Dashboard = () => {
                                 </div>
                             ))
                         }
+                    </div>
+                </div>
+                <div className="col-6">
+                    <div className="card full-height">
+                        {/* chart */}
                     </div>
                 </div>
             </div>
