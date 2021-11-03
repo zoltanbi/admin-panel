@@ -1,15 +1,18 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
 import Chart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 
 import StatusCard from '../components/status-card/StatusCard'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
-import { Link } from 'react-router-dom';
 
 import Table from '../components/table/Table';
 import { TableCustomer, TopCustomers, OrderStatus, LatestOrder, OrderUser } from '../interfaces/TableData.interface'
+
+import Badge from '../components/badge/Badge';
 
 interface ApexChartOptions {
     options?: ApexOptions;
@@ -159,10 +162,18 @@ const renderOrderBody = (item: OrderUser, index: number) => (
         <td>{item.price}</td>
         <td>{item.date}</td>
         <td>
-            <span>{item.status}</span>
+        {/*@ts-ignore */}
+            <Badge type={orderStatus[item.status]} content={item.status}/>
         </td>
     </tr>
 )
+
+// const badgeStyle = {
+//     'danger': 'badge-danger',
+//     'primary': 'badge-primary',
+//     'danger': 'badge-danger',
+//     'danger': 'badge-danger',
+// }
 
 const Dashboard = () => {
     return (
