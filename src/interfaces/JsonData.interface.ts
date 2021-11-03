@@ -19,3 +19,12 @@ export interface StatusCard {
     count: string;
     title: string;
 }
+export interface CustomerData {
+    id: number;
+    name: string;
+    email: string;
+    location: string;
+    phone: string;
+    total_spend: string;
+    total_orders: number;
+}

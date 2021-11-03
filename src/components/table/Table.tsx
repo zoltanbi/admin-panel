@@ -2,12 +2,13 @@ import React from 'react'
 
 import './table.css'
 
-import { TableCustomer, OrderUser } from '../../interfaces/TableData.interface'
+import { TableCustomer, OrderUser } from '../../interfaces/TableData.interface';
+import { CustomerData } from '../../interfaces/JsonData.interface';
 
 interface TableProps {
     headData: string[];
     renderHead: any;
-    bodyData: TableCustomer[] | OrderUser[];
+    bodyData: TableCustomer[] | OrderUser[] | CustomerData[];
     renderBody: any;
 }
 
