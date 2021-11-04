@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Link } from 'react-router-dom';
 
 import Chart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
+
+import { RootStateOrAny, useSelector, useDispatch } from 'react-redux';
+
+import ThemeAction from '../redux/actions/ThemeAction';
 
 import StatusCard from '../components/status-card/StatusCard'
 
@@ -13,6 +17,7 @@ import Table from '../components/table/Table';
 import { TableCustomer, TopCustomers, OrderStatus, LatestOrder, OrderUser } from '../interfaces/TableData.interface'
 
 import Badge from '../components/badge/Badge';
+import ThemeReducer from '../redux/reducers/ThemeReducer';
 
 interface ApexChartOptions {
     options?: ApexOptions;
@@ -176,6 +181,15 @@ const renderOrderBody = (item: OrderUser, index: number) => (
 // }
 
 const Dashboard = () => {
+
+    const themeReducer = useSelector((state: RootStateOrAny) => state.ThemeReducer.mode)
+
+    // const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(ThemeAction.getTheme())
+    // })
+
     return (
         <div>
             <h2 className='page-header'>Dashboard</h2>
@@ -199,7 +213,13 @@ const Dashboard = () => {
                     <div className="card full-height">
                         {/* chart */}
                         <Chart
-                            options={chartOptions.options}
+                            options={themeReducer === 'theme-mode-dark' ? {
+                                ...chartOptions.options,
+                                theme: { mode: 'dark' }
+                            } : {
+                                ...chartOptions.options,
+                                theme: { mode: 'light' }
+                            }}
                             series={chartOptions.series}
                             type='line'
                             height='100%'
