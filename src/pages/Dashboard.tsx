@@ -28,7 +28,10 @@ const chartOptions: ApexChartOptions = {
     options: {
         colors: ['#6ab04c', '#2980b9'],
         chart: {
-            background: 'transparent'
+            background: 'transparent',
+            toolbar: {
+                show: false,
+            },
         },
         dataLabels: {
             enabled: false
@@ -44,7 +47,7 @@ const chartOptions: ApexChartOptions = {
         },
         grid: {
             show: false
-        }
+        },
     },
     series: [{
         name: 'Online Customers',
@@ -194,11 +197,11 @@ const Dashboard = () => {
         <div>
             <h2 className='page-header'>Dashboard</h2>
             <div className="row">
-                <div className="col-6">
+                <div className="col-6 col-md-12">
                     <div className="row">
                         {
                             statusCards.map((item, index) => (
-                                <div className="col-6" key={index}>
+                                <div className="col-6 col-md-6 col-sm-12" key={index}>
                                     <StatusCard
                                         icon={item.icon}
                                         count={item.count}
@@ -209,7 +212,7 @@ const Dashboard = () => {
                         }
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-6 col-md-12">
                     <div className="card full-height">
                         {/* chart */}
                         <Chart
@@ -226,7 +229,7 @@ const Dashboard = () => {
                         />
                     </div>
                 </div>
-                <div className="col-4">
+                <div className="col-4 col-md-12">
                     <div className="card">
                         <div className="card__header">
                             <h3>top customers</h3>
@@ -244,7 +247,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-8">
+                <div className="col-8 col-md-12">
                     <div className="card">
                         <div className="card__header">
                             <h3>latest orders</h3>

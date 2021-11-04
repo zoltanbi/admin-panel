@@ -11,3 +11,10 @@
 .layout__content-main {
     padding: 30px;
 }
+
+@media only screen and (max-width: 960px) {
+
+    .layout__content {
+        padding-left: 0;
+    }
+}

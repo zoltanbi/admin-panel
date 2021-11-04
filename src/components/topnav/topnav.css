@@ -79,3 +79,18 @@
     font-weight: 600;
 }
 
+@media only screen and (max-width: 960px) {
+    .topnav {
+        margin-left: 71px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .topnav {
+        justify-content: flex-end;
+    }
+    .topnav__search {
+        display: none;
+    }
+}
