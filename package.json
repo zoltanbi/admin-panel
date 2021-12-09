@@ -47,6 +47,8 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.2",
-    "@types/redux": "^3.6.0"
+    "@types/redux": "^3.6.0",
+    "favicons-webpack-plugin": "^5.0.2",
+    "webpack-pwa-manifest": "^4.3.0"
   }
 }
